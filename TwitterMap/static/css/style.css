@@ -1,0 +1,69 @@
+body {
+  padding-top: 100px;
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  color: white;
+}
+#map {
+    height: 600px;
+    width: 100%;
+}
+.modal-body {
+    position: absolute;
+    padding: 10px;
+}
+.modal-dialog {
+    margin-top: 0;
+    margin-bottom: 0;
+    width: 100px;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.modal.fade .modal-dialog {
+    transform: translate(0, -100%);
+}
+
+.modal.in .modal-dialog {
+    transform: translate(0, 0);
+}
+
+.navbar-inverse {
+    background-color: #7643C4;
+    border-color: #080808;
+}
+
+button#search_tweets_button {
+    background-color: #7643C4;
+}
+button#geo_query {
+    background-color: #7643C4;
+}
+
+#circle {
+      width: 30px;
+      height: 30px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      border-radius: 25px;
+      border-width: 5px;
+}
+
+.positive-sen{
+border: solid;
+border-color: aqua;
+background: radial-gradient(circle, blue, aqua);
+}
+.negative-sen{
+border: solid;
+border-color: yellow;
+background: radial-gradient(circle, red, yellow);
+}
+
+.left-pos {
+  float: left;
+  margin: 2px 5px;
+  display: inline;
+}

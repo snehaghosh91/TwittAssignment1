@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    {% load static %}
+    <script src="{% static 'js/script.js' %}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDZaYNHSwGe3Fc9yNoS-llX-WwJewNM42A&libraries=visualization" type="text/javascript">
+    </script>
+
+    {#    <script async defer#}
+    {#        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQQ8a2--acM4YfkScjmgBV8M9ObR2_P9M&callback=initMap">#}
+    {#    </script>#}
+{% endblock %}
+
+{% block content %}
+    {% load static %}
+    <div id="loading_modal" class="modal fade" data-backdrop="static" data-keyboard="false" style="vertical-align: bottom;">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="{% static "images/ring-alt.gif" %}"/>
+                    <label>Loading</label>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <h1> Search for tweets </h1>
+    <form id="search_query_form">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col col-md-2">
+                <label>Select Keyword :</label>
+            </div>
+            <div class="col col-md-6">
+                <select class="form-control selectpicker input-sm" id="keyword_select">
+                    {% for keyword in keywords %}
+                        <option value="{{ keyword }}">{{ keyword }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="col col-md-3">
+                <button type="button" class="btn btn-success" id="search_tweets_button">
+                    Search Tweets
+                </button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-12">
+                <label> New Tweets: <span class="badge" id="new_tweet_num">0</span></label>
+            </div>
+        </div>
+
+    </form>
+    <br/>
+    <div id="results_div" style="display: none;">
+        <div class="row">
+            <div class="col col-md-12">
+                <label> Select a point on Map for GepSpatial Search </label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-md-2">
+                <label>Tweets within KMs:</label>
+            </div>
+            <div class="col col-md-2">
+                <input class="form-control input-sm" id="distance" placeholder="Distance in KM" disabled="disabled" type="number"/>
+            </div>
+            <div class="col col-md-8">
+                <label> Selected Point Latitude: <span id="selected_lat">N/A</span> ; Longitude <span id="selected_lon">N/A</span></label>
+            </div>
+        </div>
+	<br/>
+        <div class="row">
+            <div class="col col-md-3">
+                <button id="geo_query" class="btn btn-primary" disabled="disabled">
+                    GeoSearch
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div>
+	<label> Sentiment Gradient </label>
+	<br/>
+	{% load static %}
+    <div class="left-pos">Positive</div> <div id="circle" class="left-pos positive-sen"> </div> 
+    <div class="left-pos">Negative</div> <div id="circle" class="left-pos negative-sen"> </div>
+	</div>
+    <br/>
+    <br/>
+    <div>
+    <label id="num_results_div" style="display: none;"> Tweets Count : <span id="num_results"></span></label>
+    <div>
+    <br/>
+    <div id="map"></div>
+    
+    
+{% endblock %}
