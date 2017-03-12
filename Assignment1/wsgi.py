@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/1.10/howto/deployment/wsgi/
 
 import os
 
-os.environ("DJANGO_SETTINGS_MODULE", "Assignment1.settings")
+os.environ["DJANGO_SETTINGS_MODULE"] = "Assignment1.settings"
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
