@@ -56,7 +56,7 @@ $(document).ready(function () {
             }
         });
     };
-    setTimeout($.fn.poll_request, 500);
+    setTimeout($.fn.poll_request, 5000);
 
 
     $("#search_tweets_button").click(function () {
