@@ -16,7 +16,7 @@ To install the dependencies run the “install.sh” shell script.
 
 To get started go to url http://my-env.jwbwzuwmmk.us-west-2.elasticbeanstalk.com/ to open the home page of the application.
 
-![screen shot 2017-03-12 at 1 50 31 pm](https://cloud.githubusercontent.com/assets/22078080/23834396/3c105cd6-072c-11e7-9f94-0b999316c50e.png)
+![screen shot 2017-03-12 at 1 42 28 pm](https://cloud.githubusercontent.com/assets/22078080/23834422/9712b3ae-072c-11e7-82d9-4b304aa17d98.png)
 
 ![screen shot 2017-03-12 at 1 43 48 pm](https://cloud.githubusercontent.com/assets/22078080/23834397/3c10a86c-072c-11e7-9c8b-eefe25d99536.png)
 
@@ -24,7 +24,6 @@ To get started go to url http://my-env.jwbwzuwmmk.us-west-2.elasticbeanstalk.com
 
 ![screen shot 2017-03-12 at 1 57 20 pm](https://cloud.githubusercontent.com/assets/22078080/23834393/3c0df482-072c-11e7-8c7d-3293ff61e9ac.png)
 
-![screen shot 2017-03-12 at 1 59 37 pm](https://cloud.githubusercontent.com/assets/22078080/23834394/3c0eaaee-072c-11e7-9ea5-81c44d68aa96.png)
 
 
 
