@@ -19,15 +19,16 @@ The application provides following functionalities-
 5. Geo-Spatial Search is also implemented. Use can place a marker on the map and give distance in kilo meter as radius in the text box and hit “Geo-Search” button, the application searches for the tweets within the geo distance from marker and displays them on map.
 
 The following modules are used in the Web Application:
-Django framework and Python
-Elastic Beanstalk - Deploy application.
-Elastic Search - indexing the tweets and searching the indexed data.
-SQS - Message Queue service for queuing tweets and notifications.
-SNS - Push Notification Service to index data to Elastic Search.
-Alchemy API - Sentiment Analysis.
-Google maps API - Render tweets on map.
-Twitter API - Streaming tweets from Twitter.
-Twitter Bootstrap Framework- CSS.
+
+- Django framework and Python
+- Elastic Beanstalk - Deploy application.
+- Elastic Search - indexing the tweets and searching the indexed data.
+- SQS - Message Queue service for queuing tweets and notifications.
+- SNS - Push Notification Service to index data to Elastic Search.
+- Alchemy API - Sentiment Analysis.
+- Google maps API - Render tweets on map.
+- Twitter API - Streaming tweets from Twitter.
+- Twitter Bootstrap Framework- CSS.
 
 To install the dependencies run the “install.sh” shell script.
 
