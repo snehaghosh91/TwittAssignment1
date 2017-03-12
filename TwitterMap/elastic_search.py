@@ -24,7 +24,7 @@ def search_tweets_geo(keyword, distance, lat, lng, index_name, host=None):
     else:
         es = Elasticsearch(host)
     hits = es.search(index=index_name,body={"from":0, "size":5000 ,"query": {"bool": {"must":  
-           "match":{"tweet":keyword}}, "filter":{"geo_distance":{"distance":str(distance)+"km","location":{"lat":lat, "lon":lng}}}}}})
+           "match":{"tweet":keyword}}, "filter":{"geo_distance":{"distance":str(distance)+"km","location":{"lat":lat, "lon":lng}}}}})
     #hits = es.search(index=index_name,body={"from":0, "size":5000 ,"query":{"match":{"tweet":keyword}}, "filter":{"geo_distance":{"distance":str(distance)+"km","location":{"lat":lat, "lon":lng}}}})
     result = []
     if hits and hits.get('hits',None) and len(hits['hits']['hits'])>0:
