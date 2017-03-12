@@ -16,14 +16,34 @@ To install the dependencies run the “install.sh” shell script.
 
 To get started go to url http://my-env.jwbwzuwmmk.us-west-2.elasticbeanstalk.com/ to open the home page of the application.
 
+Sceenshots - 
+Selected keyword 'love' from the dropdown and clicked on "Search Tweets".
 ![screen shot 2017-03-12 at 1 42 28 pm](https://cloud.githubusercontent.com/assets/22078080/23834422/9712b3ae-072c-11e7-82d9-4b304aa17d98.png)
 
+Displaying the results with sentiments(Positive, Negative) on Google Map.
 ![screen shot 2017-03-12 at 1 43 48 pm](https://cloud.githubusercontent.com/assets/22078080/23834397/3c10a86c-072c-11e7-9c8b-eefe25d99536.png)
 
+GeoSpatial Search Feature - User places marker on Map and hits "Geo Search".
 ![screen shot 2017-03-12 at 1 44 45 pm](https://cloud.githubusercontent.com/assets/22078080/23834395/3c0ff1d8-072c-11e7-84c4-c256e603b594.png)
 
+GeoSpatial Search Results - Rendering Geo Search Data on Map.
 ![screen shot 2017-03-12 at 1 57 20 pm](https://cloud.githubusercontent.com/assets/22078080/23834393/3c0df482-072c-11e7-8c7d-3293ff61e9ac.png)
 
+AWS Configurations - 
+Elastic Search
+![screen shot 2017-03-12 at 1 46 43 pm](https://cloud.githubusercontent.com/assets/22078080/23834654/76fb0f2c-0730-11e7-8d0d-168f48167121.png)
+Showing data indexed in Elastic Search -
+![screen shot 2017-03-12 at 2 41 52 pm](https://cloud.githubusercontent.com/assets/22078080/23834761/21e7ff48-0732-11e7-9b69-ef49c1b54b57.png)
+
+
+SQS Message Queue - 
+![screen shot 2017-03-12 at 1 47 13 pm](https://cloud.githubusercontent.com/assets/22078080/23834653/76fb1594-0730-11e7-9149-ae9729453f21.png)
+SQS - Diaplying Message Details
+![screen shot 2017-03-12 at 1 48 59 pm](https://cloud.githubusercontent.com/assets/22078080/23834652/76faa622-0730-11e7-9917-06a56ea68956.png)
+SQS - Displaying Notification Detail received from SNS.
+![screen shot 2017-03-12 at 1 50 03 pm](https://cloud.githubusercontent.com/assets/22078080/23834651/76fa53c0-0730-11e7-8586-99e919c0fbc5.png)
+SNS Configuration - Topic and subscription.
+![screen shot 2017-03-12 at 2 40 02 pm](https://cloud.githubusercontent.com/assets/22078080/23834742/e0e4ab5e-0731-11e7-999e-de946c175827.png)
 
 
 
