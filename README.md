@@ -7,10 +7,11 @@
 |ppd241|Parita Piyush Dhandha|
 |sg3533|Sneha Ghosh|
 
-**Description**
-The Twitt Map is a web application in **Django framework**. It is a scalable application deployed on the **ElasticBeanstalk**. 
+**Description**:
+The Twitt Map is a web application in **Django framework**. It is a scalable application deployed on the **ElasticBeanstalk**.
 
 The application provides following functionalities-
+
 1. Search for tweets having a particular keyword (out of given keywords).
 2. Search scans both downloaded and live tweets.
 3. It shows count of new tweets getting indexed.
@@ -23,13 +24,10 @@ Elastic Beanstalk - Deploy application.
 Elastic Search - indexing the tweets and searching the indexed data.
 SQS - Message Queue service for queuing tweets and notifications.
 SNS - Push Notification Service to index data to Elastic Search.
-Alchemi API - Sentiment Analysis.
+Alchemy API - Sentiment Analysis.
 Google maps API - Render tweets on map.
 Twitter API - Streaming tweets from Twitter.
 Twitter Bootstrap Framework- CSS.
- 
-You can clone repository on local:
-git clone https://github.com/snehaghosh91/TwittAssignment1.git
 
 To install the dependencies run the “install.sh” shell script.
 
