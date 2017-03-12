@@ -11,10 +11,10 @@ from twitter import *
 import sys
 import json
 
-latitude = 40.6619958	# geographical centre of search
-longitude = -73.9888796	# geographical centre of search
-max_range = 1 			# search range in kilometres
-num_results = 50		# minimum results to obtain
+latitude = 30.6619958	# geographical centre of search
+longitude = -70.9888796	# geographical centre of search
+max_range = 10000000			# search range in kilometres
+num_results = 500		# minimum results to obtain
 outfile = "output.json"
 
 #-----------------------------------------------------------------------
@@ -51,7 +51,7 @@ with open(outfile, 'w') as jsonfile:
         # perform a search based on latitude and longitude
         # twitter API docs: https://dev.twitter.com/rest/reference/get/search/tweets
         #-----------------------------------------------------------------------
-        query = twitter.search.tweets(q = "", geocode = "%f,%f,%dkm" % (latitude, longitude, max_range), count = 1000, max_id = last_id)
+        query = twitter.search.tweets(q = "", geocode = "%f,%f,%dkm" % (latitude, longitude, max_range), count = 1000, max_id = last_id, lang="en")
         output_dict = []
         for result in query["statuses"]:
                 #-----------------------------------------------------------------------

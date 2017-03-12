@@ -1,5 +1,7 @@
 import csv
 import json
+import sys
+
 from tweepy import OAuthHandler
 from tweepy import Stream
 from tweepy.streaming import StreamListener
@@ -52,8 +54,8 @@ class StdOutListener(StreamListener):
         try:
             json_data = json.loads(data)
             output_data = getData(json_data)
-            print (output_data)
             if output_data:
+                print output_data
                 responses = sqs.send_message(QueueUrl= queue['QueueUrl'], MessageBody='TweetInfo', MessageAttributes=output_data)
             #queue.send_message(MessageBody="TweetInfo", MessageAttributes=data)
         except Exception as e:
@@ -71,7 +73,7 @@ def addDownloadedTweets():
         present = False
         for key in KEYWORDS:
             if key in x['text']:
-                print x['text']
+                print key
                 present = True
         if not present:
             continue
@@ -91,8 +93,6 @@ def getData(json_data):
     elif json_data['coordinates']:
         lon = float(json_data['coordinates']['coordinates'][0])
         lat = float(json_data['coordinates']['coordinates'][1])
-        print lat
-        print lon
     elif 'place' in json_data.keys() and json_data['place']:
         lon = float(json_data['place']['bounding_box']['coordinates'][0][0][0])
         lat = float(json_data['place']['bounding_box']['coordinates'][0][0][1])

@@ -23,7 +23,6 @@ def search_tweets_geo(keyword, distance, lat, lng, index_name, host=None):
         es = Elasticsearch()
     else:
         es = Elasticsearch(host)
-    print('Ullu')
     hits = es.search(index=index_name,body={"from":0, "size":5000 ,"query": {"bool": {"must":  
            {"match_all":{}}, "filter":{"geo_distance":{"distance":str(distance)+"km","location":{"lat":lat, "lon":lng}}}}}})
     #hits = es.search(index=index_name,body={"from":0, "size":5000 ,"query":{"match":{"tweet":keyword}}, "filter":{"geo_distance":{"distance":str(distance)+"km","location":{"lat":lat, "lon":lng}}}})

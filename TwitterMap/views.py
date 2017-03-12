@@ -45,7 +45,6 @@ def geo_query(request):
     if request.method=="GET":
         return redirect("/search")
     if request.method=="POST":
-        print ('Himanshu is stupid')
         selected_keyword = request.POST['selected_keyword']
         distance = float(request.POST['distance'])
         lat = float(request.POST['lat'])
