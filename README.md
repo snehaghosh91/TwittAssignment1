@@ -4,8 +4,8 @@
 
 |Net ID | Name|
 |----|----|
-|ppd241|Parita Piyush Dhandha|
-|sg3533|Sneha Ghosh|
+| ppd241 | Parita Piyush Dhandha
+| sg3533 | Sneha Ghosh
 
 **Description**:
 The Twitt Map is a web application in **Django framework**. It is a scalable application deployed on the **ElasticBeanstalk**.
