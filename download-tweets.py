@@ -2,8 +2,8 @@
 
 #-----------------------------------------------------------------------
 # twitter-search-geo
-#  - performs a search for tweets close to New Cross, London,
-#    and outputs them to a CSV file.
+#  - performs a search for tweets given parameters like latitude, longitude, range
+#    and outputs them to a Json file.
 #-----------------------------------------------------------------------
 
 from twitter import *
@@ -13,8 +13,8 @@ import json
 
 latitude = 30.6619958	# geographical centre of search
 longitude = -70.9888796	# geographical centre of search
-max_range = 10000000			# search range in kilometres
-num_results = 500		# minimum results to obtain
+max_range = 10000000	# search range in kilometres
+num_results = 500	# minimum results to obtain
 outfile = "output.json"
 
 #-----------------------------------------------------------------------
@@ -30,15 +30,9 @@ exec(open("./config.py").read(), config)
 twitter = Twitter(auth = OAuth(config["access_key"], config["access_secret"], config["consumer_key"], config["consumer_secret"]))
 
 #-----------------------------------------------------------------------
-# open a file to write (mode "w"), and create a CSV writer object
+# open a file to write (mode "w")
 #-----------------------------------------------------------------------
-#csvfile = file(outfile, "w")
 with open(outfile, 'w') as jsonfile:
-
-#-----------------------------------------------------------------------
-# add headings to our CSV file
-#-----------------------------------------------------------------------
-
 
 #-----------------------------------------------------------------------
 # the twitter API only allows us to query up to 100 tweets at a time.
@@ -69,8 +63,6 @@ with open(outfile, 'w') as jsonfile:
 			x['latitude'] = latitude
 			x['longitude'] = longitude
                         output_dict.append(x)
-
-       
 
 	# Transform python object back into json
 	output_json = json.dumps(output_dict)

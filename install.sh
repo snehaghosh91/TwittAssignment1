@@ -11,3 +11,5 @@ sudo pip install elasticsearch
 sudo pip install watson-developer-cloud
 
 sudo pip install boto3
+
+sudo pip install tweepy

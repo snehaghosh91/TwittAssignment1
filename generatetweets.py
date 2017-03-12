@@ -23,6 +23,10 @@ access_token='113727914-bXEa6uZUDVcctR5w82QRDxkA2AFSiVDMqQjyxK9F'
 access_token_secret='Si9xOHksG55HSVjFqdae8O7QZsxwI19aK0ZXA0hxXbMFh'
     
 sqs = boto3.client("sqs")
+# Insert values from root.csv file given as part of assignment submission to run 
+# this file on local for live tweets.
+#sqs = boto3.client("sqs", region_name='us-west-2', aws_access_key_id="",
+#   aws_secret_access_key="")
 queue = sqs.get_queue_url(QueueName="tweet_queue")
 
 index_name = "twitter-index"

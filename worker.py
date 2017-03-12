@@ -1,15 +1,21 @@
 import multiprocessing
 import time
-# import random
 from alchemyapi import AlchemyAPI
 import boto3
 import json
 
 sqs = boto3.resource('sqs')
 sns = boto3.client('sns')
+
+# Insert values from root.csv file given as part of assignment submission to run 
+# this file on local for live tweets.
+# sqs = boto3.client("sqs", region_name='us-west-2', aws_access_key_id="",
+#   aws_secret_access_key="")
+# sns = boto3.client('sns', region_name='us-west-2', aws_access_key_id="",
+#   aws_secret_access_key="")
+
 queue = sqs.get_queue_by_name(QueueName='tweet_queue')
 alchemiapi = AlchemyAPI()
-# sudo pip install --upgrade watson-developer-cloud
 sentiment = ["positive","negative","neutral"]
 arn = 'arn:aws:sns:us-west-2:682777743357:mytopic'
 
@@ -21,14 +27,12 @@ def worker_main(queue):
         if len(messages)>0:
 
             for message in messages:
-                print(message)
                 # Get the custom author message attribute if it was set
                 if message.message_attributes is not None:
                     id = message.message_attributes.get('Id').get('StringValue')
                     tweet = message.message_attributes.get('Tweet').get('StringValue')
                     lat = message.message_attributes.get('Latitude').get('StringValue')
                     lng = message.message_attributes.get('Longitude').get('StringValue')
-                    # senti = sentiment[random.randint(0,2)]
                     try:
                         response = alchemiapi.sentiment('text',tweet)
                         senti = response.get('docSentiment').get('type')
@@ -39,8 +43,7 @@ def worker_main(queue):
                     sns_message = {"id":id, "tweet":tweet, "lat":lat, "lng": lng, "sentiment":senti}
                     print("SNS messsage: "+str(sns_message))
                     sns.publish(TargetArn=arn, Message=json.dumps({'default':json.dumps(sns_message)}))
-                # Print out the body and author (if set)
-                # print('Id: {0}; Tweet: {1}; Latitude: {2}; Longitude: {3}; sentiment: {4}'.format(id,tweet,lat,lng,senti))
+                print('Id: {0}; Tweet: {1}; Latitude: {2}; Longitude: {3}; sentiment: {4}'.format(id,tweet,lat,lng,senti))
                 # Let the queue know that the message is processed
                 message.delete()
         else:
