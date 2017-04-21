@@ -46,7 +46,7 @@ mapping = {"mappings": {
     }
 }
 }
-host = ["https://search-mydomain-54whxc437ldzjler77blx3uxw4.us-west-2.es.amazonaws.com"]
+host = ["https://search-newdomain-dbr55sqtkd656ngihv7td3iyd4.us-west-2.es.amazonaws.com"]
 es = Elasticsearch(host)
 #es.indices.create(index=index_name, body=mapping)
 
