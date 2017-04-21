@@ -39,7 +39,7 @@ def worker_main(queue):
                         senti = response.get('docSentiment').get('type')
                     except Exception as e:
                         print("ERROR: "+str(e))
-                        senti = "neutral"
+                        senti = "negative"
                     # Using SNS
                     sns_message = {"id":id, "tweet":tweet, "lat":lat, "lng": lng, "sentiment":senti}
                     print("SNS messsage: "+str(sns_message))
