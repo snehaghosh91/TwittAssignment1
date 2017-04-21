@@ -35,9 +35,13 @@ def worker_main(queue):
                     lat = message.message_attributes.get('Latitude').get('StringValue')
                     lng = message.message_attributes.get('Longitude').get('StringValue')
                     try:
+                        print "SNEHA ____ WORKER CALLING SENTIMENT"
                         response = alchemiapi.sentiment('text',tweet)
+                        print "SNEHA ____ WORKER GETTING RESPONSE"
+                        print response
                         senti = response.get('docSentiment').get('type')
                     except Exception as e:
+                        print "SNEHA ____ WORKING PRINT ERROR"
                         print("ERROR: "+str(e))
                         senti = "negative"
                     # Using SNS
