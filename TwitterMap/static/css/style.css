@@ -54,7 +54,7 @@ button#geo_query {
 .positive-sen{
 border: solid;
 border-color: lightgreen;
-background: radial-gradient(circle, green, lightgreen);
+background: radial-gradient(circle, green, green);
 }
 .negative-sen{
 border: solid;
