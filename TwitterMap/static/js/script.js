@@ -8,7 +8,7 @@ $(document).ready(function () {
     ]
     // Red - negative
     gradient2 = [
-      'rgba(255, 0, 0, 1)'
+      'rgba(0, 0, 0, 1)'
     ]
     // Green - positive
     gradient3 = [
