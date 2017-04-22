@@ -34,7 +34,7 @@ $(document).ready(function () {
             }
         });
     };
-    setTimeout($.fn.poll_request, 500);
+    setTimeout($.fn.poll_request, 100);
 
 
     $("#search_tweets_button").click(function () {
@@ -111,16 +111,29 @@ function mapData (map, locations) {
     var heatmapData2 = [];
     var heatmapData3 = [];
     var i; 
+    var posCount = 0;
+    var negCount = 0;
+    var neutCount = 0;
     for (i = 0; i < locations.length; i++) {
         var iconImage;
         var latLng = new google.maps.LatLng(parseInt(locations[i][1]), parseInt(locations[i][2]));
         if(locations[i][3]=="positive"){
+            posCount++;
             heatmapData3.push(latLng);
         }else if(locations[i][3]=="negative"){
+            negCount++;
             heatmapData2.push(latLng);
         }else if(locations[i][3]=="neutral"){
+            neutCount++;
             heatmapData1.push(latLng);
         }
+
+        $("#pos_results").text(posCount);
+        $("#neg_results").text(negCount);
+        $("#neut_results").text(neutCount);
+        $("#pos_results_div").show();
+        $("#neg_results_div").show();
+        $("#neut_results_div").show();
         
         pointArray1 = new google.maps.MVCArray(heatmapData1);
         pointArray2 = new google.maps.MVCArray(heatmapData2);
