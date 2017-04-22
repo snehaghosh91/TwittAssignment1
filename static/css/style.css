@@ -53,13 +53,19 @@ button#geo_query {
 
 .positive-sen{
 border: solid;
-border-color: aqua;
-background: radial-gradient(circle, blue, aqua);
+border-color: lightgreen;
+background: radial-gradient(circle, green, lightgreen);
 }
 .negative-sen{
 border: solid;
 border-color: yellow;
 background: radial-gradient(circle, red, yellow);
+}
+
+.neutral-sen{
+border: solid;
+border-color: aqua;
+background: radial-gradient(circle, blue, aqua);
 }
 
 .left-pos {
