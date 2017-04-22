@@ -2,40 +2,24 @@ window.user_markers = [];
 window.current_latlng = null;
 window.new_tweet_num = 0;
 $(document).ready(function () {
-    //Blue - positive
+    //Blue - neutral
     gradient1 = [
-    'rgba(0, 255, 255, 0)',
-    'rgba(0, 255, 255, 1)',
-    'rgba(0, 225, 255, 1)',
-    'rgba(0, 200, 255, 1)',
-    'rgba(0, 175, 255, 1)',
-    'rgba(0, 160, 255, 1)',
-    'rgba(0, 145, 223, 1)',
-    'rgba(0, 125, 191, 1)',
-    'rgba(0, 110, 255, 1)',
-    'rgba(0, 100, 255, 1)',
-    'rgba(0, 75, 255, 1)',
-    'rgba(0, 50, 255, 1)',
-    'rgba(0, 25, 255, 1)',
-    'rgba(0, 0, 255, 1)'
-  ]
+      'rgba(0, 50, 255, 1)',
+      'rgba(0, 25, 255, 1)',
+      'rgba(0, 0, 255, 1)'
+    ]
     // Red - negative
     gradient2 = [
-        'rgba(255, 255, 0, 0)',
-        'rgba(255, 255, 0, 1)',
-        'rgba(255, 225, 0, 1)',
-        'rgba(255, 200, 0, 1)',
-        'rgba(255, 175, 0, 1)',
-        'rgba(255, 160, 0, 1)',
-        'rgba(255, 145, 0, 1)',
-        'rgba(255, 125, 0, 1)',
-        'rgba(255, 110, 0, 1)',
-        'rgba(255, 100, 0, 1)',
-        'rgba(255, 75, 0, 1)',
-        'rgba(255, 50, 0, 1)',
-        'rgba(255, 25, 0, 1)',
-        'rgba(255, 0, 0, 1)'
-      ]
+      'rgba(255, 50, 0, 1)',
+      'rgba(255, 25, 0, 1)',
+      'rgba(255, 0, 0, 1)'
+    ]
+    // Green - positive
+    gradient3 = [
+      'rgba(50, 255, 0, 1)',
+      'rgba(25, 255, 0, 1)',
+      'rgba(0, 255, 0, 1)'
+    ]
     $("#new_tweet_num").text(0);
     <!-- To get New Notifications-->
     $.fn.poll_request = function(){
@@ -131,27 +115,34 @@ $(document).ready(function () {
 function mapData (map, locations) {
     var heatmapData1 = [];
     var heatmapData2 = [];
+    var heatmapData3 = [];
     var i; 
     for (i = 0; i < locations.length; i++) {
         var iconImage;
         var latLng = new google.maps.LatLng(parseInt(locations[i][1]), parseInt(locations[i][2]));
         if(locations[i][3]=="positive"){
-            heatmapData1.push(latLng);
+            heatmapData3.push(latLng);
         }else if(locations[i][3]=="negative"){
-            
             heatmapData2.push(latLng);
+        }else if(locations[i][3]=="neutral"){
+            heatmapData1.push(latLng);
         }
         
         pointArray1 = new google.maps.MVCArray(heatmapData1);
         pointArray2 = new google.maps.MVCArray(heatmapData2);
+        pointArray3 = new google.maps.MVCArray(heatmapData3);
         heatmap1 = new google.maps.visualization.HeatmapLayer({
           data: pointArray1});
         heatmap2 = new google.maps.visualization.HeatmapLayer({
           data: pointArray2});
+        heatmap3 = new google.maps.visualization.HeatmapLayer({
+          data: pointArray3});
         heatmap1.setMap(map); 
-        heatmap2.setMap(map); 
+        heatmap2.setMap(map);
+        heatmap3.setMap(map); 
         heatmap1.set('gradient', gradient1);  
         heatmap2.set('gradient', gradient2);
+        heatmap3.set('gradient', gradient3);
     }
 }
 

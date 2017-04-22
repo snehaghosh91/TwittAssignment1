@@ -1,8 +1,12 @@
 import multiprocessing
 import time
-from alchemyapi import AlchemyAPI
 import boto3
 import json
+import responses
+from watson_developer_cloud import NaturalLanguageUnderstandingV1
+from watson_developer_cloud import WatsonException
+from watson_developer_cloud.natural_language_understanding.features import (
+    v1 as features)
 
 sqs = boto3.resource('sqs')
 sns = boto3.client('sns')
@@ -15,19 +19,19 @@ sns = boto3.client('sns')
 #   aws_secret_access_key="")
 
 queue = sqs.get_queue_by_name(QueueName='tweet_queue')
-alchemiapi = AlchemyAPI()
 sentiment = ["positive","negative","neutral"]
 arn = 'arn:aws:sns:us-west-2:682777743357:mytopic'
 
-
+natural_language_understanding = NaturalLanguageUnderstandingV1(url='https://gateway.watsonplatform.net/natural-language-understanding/api',
+                                     version='2017-02-27',
+                                     username='4a2440c9-48d1-49e7-b481-0ad1ae2f3aab',
+                                     password='Lj8FSwFIuUGL')
 def worker_main(queue):
     while True:
         messages = queue.receive_messages(MessageAttributeNames=['Id', 'Tweet', 'Latitude', 'Longitude'])
         print("Received messages")
         if len(messages)>0:
-
             for message in messages:
-                print message
                 # Get the custom author message attribute if it was set
                 if message.message_attributes is not None:
                     id = message.message_attributes.get('Id').get('StringValue')
@@ -35,15 +39,14 @@ def worker_main(queue):
                     lat = message.message_attributes.get('Latitude').get('StringValue')
                     lng = message.message_attributes.get('Longitude').get('StringValue')
                     try:
-                        print "SNEHA ____ WORKER CALLING SENTIMENT"
-                        response = alchemiapi.sentiment('text',tweet)
-                        print "SNEHA ____ WORKER GETTING RESPONSE"
-                        print response
-                        senti = response.get('docSentiment').get('type')
+                        response = natural_language_understanding.analyze(
+                            text=tweet, features=[features.Sentiment()])
+                        senti = response["sentiment"]["document"]["label"]
+                        print senti
+                        # senti = response.get('docSentiment').get('type')
                     except Exception as e:
-                        print "SNEHA ____ WORKING PRINT ERROR"
                         print("ERROR: "+str(e))
-                        senti = "negative"
+                        senti = "neutral"
                     # Using SNS
                     sns_message = {"id":id, "tweet":tweet, "lat":lat, "lng": lng, "sentiment":senti}
                     print("SNS messsage: "+str(sns_message))
