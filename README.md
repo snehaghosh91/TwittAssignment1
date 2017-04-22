@@ -25,7 +25,7 @@ The following modules are used in the Web Application:
 - Elastic Search - indexing the tweets and searching the indexed data.
 - SQS - Message Queue service for queuing tweets and notifications.
 - SNS - Push Notification Service to index data to Elastic Search.
-- Alchemy API - Sentiment Analysis.
+- NaturalLanguageUnderstandingV1 - Sentiment Analysis.
 - Google maps API - Render tweets on map.
 - Twitter API - Streaming tweets from Twitter.
 - Twitter Bootstrap Framework- CSS.
