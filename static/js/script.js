@@ -12,7 +12,7 @@ $(document).ready(function () {
     ]
     // Green - positive
     gradient3 = [
-      'rgba(0, 150, 50, 1)'
+      'rgba(250, 150, 50, 1)'
     ]
     $("#new_tweet_num").text(0);
     <!-- To get New Notifications-->
@@ -95,6 +95,9 @@ $(document).ready(function () {
                 $("#num_results_div").show();
                 $("#results_div").show();
                 mapData (map, locations);
+                $("#pos_results_div").show();
+                $("#neg_results_div").show();
+                $("#neut_results_div").show();
 
             },
             error: function(response) {
@@ -131,9 +134,6 @@ function mapData (map, locations) {
         $("#pos_results").text(posCount);
         $("#neg_results").text(negCount);
         $("#neut_results").text(neutCount);
-        $("#pos_results_div").show();
-        $("#neg_results_div").show();
-        $("#neut_results_div").show();
         
         pointArray1 = new google.maps.MVCArray(heatmapData1);
         pointArray2 = new google.maps.MVCArray(heatmapData2);
