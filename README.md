@@ -41,7 +41,7 @@ Selected keyword 'friends' from the dropdown and clicked on "Search Tweets".
 
 ![screen shot 2017-04-22 at 12 45 03 pm](https://cloud.githubusercontent.com/assets/22078080/25306452/65ed1126-275b-11e7-9d61-ef560c2c8f2b.png)
 
-Displaying the results with sentiments(Positive, Negative) on Google Map.
+Displaying the results with sentiments(Positive, Negative, Neutral) on Google Map.
 
 ![screen shot 2017-04-22 at 12 44 02 pm](https://cloud.githubusercontent.com/assets/22078080/25306455/6cd2e95c-275b-11e7-8660-ceb7bf13be94.png)
 
@@ -61,7 +61,7 @@ Elastic Search
 
 Showing data indexed in Elastic Search -
 
-![screen shot 2017-03-12 at 2 41 52 pm](https://cloud.githubusercontent.com/assets/22078080/23834761/21e7ff48-0732-11e7-9b69-ef49c1b54b57.png)
+![screen shot 2017-04-22 at 1 06 43 pm](https://cloud.githubusercontent.com/assets/22078080/25306523/9902992c-275c-11e7-987f-af9056e4b3f9.png)
 
 SQS Message Queue - 
 
