@@ -8,11 +8,11 @@ $(document).ready(function () {
     ]
     // Red - negative
     gradient2 = [
-      'rgba(0, 0, 0, 1)'
+      'rgba(250, 0, 0, 1)'
     ]
     // Green - positive
     gradient3 = [
-      'rgba(250, 150, 50, 1)'
+      'rgba(0, 150, 50, 1)'
     ]
     $("#new_tweet_num").text(0);
     <!-- To get New Notifications-->
@@ -117,7 +117,6 @@ function mapData (map, locations) {
     var posCount = 0;
     var negCount = 0;
     var neutCount = 0;
-    alert("I am here");
     for (i = 0; i < locations.length; i++) {
         var iconImage;
         var latLng = new google.maps.LatLng(parseInt(locations[i][1]), parseInt(locations[i][2]));
@@ -131,7 +130,6 @@ function mapData (map, locations) {
             neutCount++;
             heatmapData1.push(latLng);
         }
-        alert(posCount);
         
         $("#pos_results").text(posCount);
         $("#neg_results").text(negCount);
