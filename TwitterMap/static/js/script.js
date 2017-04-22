@@ -4,21 +4,15 @@ window.new_tweet_num = 0;
 $(document).ready(function () {
     //Blue - neutral
     gradient1 = [
-      'rgba(0, 50, 255, 1)',
-      'rgba(0, 25, 255, 1)',
-      'rgba(0, 0, 255, 1)'
+      'rgba(135, 206, 250, 1)'
     ]
     // Red - negative
     gradient2 = [
-      'rgba(255, 50, 0, 1)',
-      'rgba(255, 25, 0, 1)',
       'rgba(255, 0, 0, 1)'
     ]
     // Green - positive
     gradient3 = [
-      'rgba(50, 255, 0, 1)',
-      'rgba(25, 255, 0, 1)',
-      'rgba(0, 255, 0, 1)'
+      'rgba(0, 150, 50, 1)'
     ]
     $("#new_tweet_num").text(0);
     <!-- To get New Notifications-->
