@@ -4,16 +4,56 @@ window.new_tweet_num = 0;
 $(document).ready(function () {
     //Blue - neutral
     gradient1 = [
-      'rgba(135, 206, 250, 1)'
-    ]
+    'rgba(0, 255, 255, 0)',
+    'rgba(0, 255, 255, 1)',
+    'rgba(0, 225, 255, 1)',
+    'rgba(0, 200, 255, 1)',
+    'rgba(0, 175, 255, 1)',
+    'rgba(0, 160, 255, 1)',
+    'rgba(0, 145, 223, 1)',
+    'rgba(0, 125, 191, 1)',
+    'rgba(0, 110, 255, 1)',
+    'rgba(0, 100, 255, 1)',
+    'rgba(0, 75, 255, 1)',
+    'rgba(0, 50, 255, 1)',
+    'rgba(0, 25, 255, 1)',
+    'rgba(0, 0, 255, 1)'
+  ]
     // Red - negative
     gradient2 = [
-      'rgba(0, 0, 0, 1)'
-    ]
+        'rgba(255, 255, 0, 0)',
+        'rgba(255, 255, 0, 1)',
+        'rgba(255, 225, 0, 1)',
+        'rgba(255, 200, 0, 1)',
+        'rgba(255, 175, 0, 1)',
+        'rgba(255, 160, 0, 1)',
+        'rgba(255, 145, 0, 1)',
+        'rgba(255, 125, 0, 1)',
+        'rgba(255, 110, 0, 1)',
+        'rgba(255, 100, 0, 1)',
+        'rgba(255, 75, 0, 1)',
+        'rgba(255, 50, 0, 1)',
+        'rgba(255, 25, 0, 1)',
+        'rgba(255, 0, 0, 1)'
+      ]
+    
     // Green - positive
     gradient3 = [
-      'rgba(250, 150, 50, 1)'
-    ]
+        'rgba(0, 255, 255, 0)',
+        'rgba(0, 255, 255, 1)',
+        'rgba(0, 255, 225, 1)',
+        'rgba(0, 255, 200, 1)',
+        'rgba(0, 255, 175, 1)',
+        'rgba(0, 255, 160, 1)',
+        'rgba(0, 255, 145, 1)',
+        'rgba(0, 255, 125, 1)',
+        'rgba(0, 255, 110, 1)',
+        'rgba(0, 255, 100, 1)',
+        'rgba(0, 255, 75, 1)',
+        'rgba(0, 255, 50, 1)',
+        'rgba(0, 255, 0, 1)',
+        'rgba(0, 255, 0, 1)'
+      ]
     $("#new_tweet_num").text(0);
     <!-- To get New Notifications-->
     $.fn.poll_request = function(){
@@ -117,7 +157,6 @@ function mapData (map, locations) {
     var posCount = 0;
     var negCount = 0;
     var neutCount = 0;
-    alert("I am here");
     for (i = 0; i < locations.length; i++) {
         var iconImage;
         var latLng = new google.maps.LatLng(parseInt(locations[i][1]), parseInt(locations[i][2]));
@@ -131,7 +170,6 @@ function mapData (map, locations) {
             neutCount++;
             heatmapData1.push(latLng);
         }
-        alert(posCount);
         
         $("#pos_results").text(posCount);
         $("#neg_results").text(negCount);
