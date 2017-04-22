@@ -37,27 +37,27 @@ Web Application URL - http://my-env.jwbwzuwmmk.us-west-2.elasticbeanstalk.com/
 Sceenshots-
 Web Application functionalities and AWS configurations - 
 
-Selected keyword 'love' from the dropdown and clicked on "Search Tweets".
+Selected keyword 'friends' from the dropdown and clicked on "Search Tweets".
 
-![screen shot 2017-03-12 at 1 42 28 pm](https://cloud.githubusercontent.com/assets/22078080/23834422/9712b3ae-072c-11e7-82d9-4b304aa17d98.png)
+![screen shot 2017-04-22 at 12 45 03 pm](https://cloud.githubusercontent.com/assets/22078080/25306452/65ed1126-275b-11e7-9d61-ef560c2c8f2b.png)
 
 Displaying the results with sentiments(Positive, Negative) on Google Map.
 
-![screen shot 2017-03-12 at 1 43 48 pm](https://cloud.githubusercontent.com/assets/22078080/23834397/3c10a86c-072c-11e7-9c8b-eefe25d99536.png)
+![screen shot 2017-04-22 at 12 44 02 pm](https://cloud.githubusercontent.com/assets/22078080/25306455/6cd2e95c-275b-11e7-8660-ceb7bf13be94.png)
 
 GeoSpatial Search Feature - User places marker on Map and hits "Geo Search".
 
-![screen shot 2017-03-12 at 1 44 45 pm](https://cloud.githubusercontent.com/assets/22078080/23834395/3c0ff1d8-072c-11e7-84c4-c256e603b594.png)
+![screen shot 2017-04-22 at 12 52 06 pm](https://cloud.githubusercontent.com/assets/22078080/25306458/7ca23ea0-275b-11e7-8127-ef8d3419fce0.png)
 
 GeoSpatial Search Results - Rendering Geo Search Data on Map.
 
-![screen shot 2017-03-12 at 1 57 20 pm](https://cloud.githubusercontent.com/assets/22078080/23834393/3c0df482-072c-11e7-8c7d-3293ff61e9ac.png)
+![screen shot 2017-04-22 at 12 52 31 pm](https://cloud.githubusercontent.com/assets/22078080/25306460/7f1bb620-275b-11e7-84bc-0c17eac816df.png)
 
 AWS Configurations - 
 
 Elastic Search
 
-![screen shot 2017-03-12 at 1 46 43 pm](https://cloud.githubusercontent.com/assets/22078080/23834654/76fb0f2c-0730-11e7-8d0d-168f48167121.png)
+![screen shot 2017-04-22 at 1 02 48 pm](https://cloud.githubusercontent.com/assets/22078080/25306500/114bca30-275c-11e7-9b5e-291fa6a636c4.png)
 
 Showing data indexed in Elastic Search -
 
