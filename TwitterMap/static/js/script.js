@@ -39,7 +39,7 @@ $(document).ready(function () {
     
     // Green - positive
     gradient3 = [
-        'rgba(0, 100, 100, 1)',
+        'rgba(0, 100, 100, 0)',
         'rgba(0, 100, 90, 1)',
         'rgba(0, 100, 80, 1)',
         'rgba(0, 100, 70, 1)',
